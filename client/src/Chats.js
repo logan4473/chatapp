@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import TextEditor from './TextEditor';
 
 function Chats({socket,username,roomID}) {
 
@@ -32,7 +33,8 @@ function Chats({socket,username,roomID}) {
           <span className='user' id={message.username===username?'sender':'reciever'}>{message.username}  {message.time}</span>
           </>
         ))}
-        <input type='text' placeholder='Type your message...' onChange={(event)=>{setMessage(event.target.value)}} />
+        <TextEditor/>
+        {/* <input type='text' placeholder='Type your message...' onChange={(event)=>{setMessage(event.target.value)}} /> */}
         <button className='send' onClick={sendMessage}>Send</button>
     </>
   )

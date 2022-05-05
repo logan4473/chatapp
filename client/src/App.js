@@ -1,15 +1,15 @@
-import './App.css';
-import {useState} from 'react';
-import io from 'socket.io-client';
-import Chats from './Chats';
+import './App.css'
+import {useState} from 'react'
+import io from 'socket.io-client'
+import Chats from './Chats'
 
-const socket = io.connect('http://localhost:4000');
+const socket = io.connect('http://localhost:4000')
 
 function App() {
 
-  const [username,setUsername] = useState('');
-  const [roomID,setRoomID] = useState('');
-  const [showChats,setShowChats] = useState(false);
+  const [username,setUsername] = useState('')
+  const [roomID,setRoomID] = useState('')
+  const [showChats,setShowChats] = useState(false)
 
   const joinRoom = ()=>{
     if(username!=='' && roomID!==''){
@@ -30,7 +30,7 @@ function App() {
       <Chats username={username} roomID={roomID} socket={socket} />
       }
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
